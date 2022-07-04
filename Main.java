@@ -17,7 +17,8 @@ Use Reentrantlock for coordinating 2 threads with signal(), signalAll() and wait
 Create a deadlock and Resolve it using tryLock().
 */
 
-A) class Normal extends Thread{
+//A)
+class Normal extends Thread{
     public void run()
     {
         System.out.println("Thread is Running... thread extend method");
@@ -42,7 +43,8 @@ public class Main
     }
 }
 
-B) import java.lang.*;
+//B)
+import java.lang.*;
 
 public class JoinExample 
 {
@@ -77,7 +79,7 @@ public class JoinExample
     }
 }
 
-C) 
+//C) 
 
 import java.util.concurrent.*;
 
