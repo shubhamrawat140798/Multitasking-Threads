@@ -4,8 +4,6 @@ Try shutdown() and shutdownNow() and observe the difference.
 Use isShutDown() and isTerminated() with ExecutorService.
 Return a Future from ExecutorService by using callable and use get(), isDone(), isCancelled() with the Future object to know the status of the task submitted.
 Submit List of tasks to ExecutorService and wait for the completion of all the tasks.
-
-Use the Synchronize method to enable synchronization between multiple threads trying to access the method at same time.
 Use the Synchronize block to enable synchronization between multiple threads trying to access the method at same time.
 Use Atomic Classes instead of Synchronize methods and blocks.
 Coordinate 2 threads using wait() and notify().
@@ -14,54 +12,7 @@ Use Reentrantlock for coordinating 2 threads with signal(), signalAll() and wait
 Create a deadlock and Resolve it using tryLock().
 */
 
-/*Synchronized method*/
-class Work
-{
-    synchronized public void getLine()
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            System.out.println(i);
-            try
-            {
-                Thread.sleep(4);
-            }
-            catch (Exception e)
-            {
-                System.out.println(e);
-            }
-        }
-    }
-}
-  
-class Train extends Thread
-{
-    Work work;
-    Train(Work work)
-    {
-        this.work = work;
-    }
-  
-    @Override
-    public void run()
-    {
-        work.getLine();
-    }
-}
-  
-public class Main
-{
-    public static void main(String[] args)
-    {
-        Work obj = new Work();
-        Train train1 = new Train(obj);
-        Train train2 = new Train(obj);
-        train1.start();
-        train2.start();
-    }
-}
-}
-}
+
 
 /*Synchronized block*/
 import java.io.*;
